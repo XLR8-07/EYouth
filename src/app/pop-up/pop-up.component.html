@@ -1,0 +1,62 @@
+<nav class="navbar">
+   <a class="navbar-brand">Topic Name</a>
+</nav>
+
+<form class="form-inline form">
+   <input type="text" class="form__field" placeholder="SEARCH......" />
+   <button type="button" class="btn btn--primary btn--inside uppercase">Search</button>
+</form>
+
+<div class="add-q" (click)="newQuestion()">
+   <span class="material-icons">insights</span>
+   <h3>NEW QUESTION</h3>
+</div>
+
+
+<div class="item-list" >
+   <div class="question-list custom-scrollbar-js">
+
+      <div class="ques-card" *ngFor="let q of this.QuestionList">
+         <h3>{{q.Q}}</h3>
+         <p>{{q.Details}}</p>
+         <a class="Linker" *ngIf=" q.Link != '' " href="https://{{q.Link}}">Related</a>
+         <div class="chips">
+            <div class="spacer"></div>
+            <div class="chip" *ngFor="let tag of q.Tags">{{tag}}</div>
+         </div>
+      </div>
+
+      <div class="loader">
+         <h3>---- LOAD MORE ----</h3>
+      </div>
+   
+   </div>
+   
+   
+   <div class="mentor-list custom-scrollbar-js" *ngIf = "profileLoaded">
+
+      <div class="Prof-card" (click)="ShowProfile(profile)" *ngFor="let profile of this.profileList">
+         <div class="image">
+            <img src={{profile.Profile_Image}}
+               alt="https://lh3.googleusercontent.com/proxy/wJp9Sew77MCPyeqlYrXJ09D92O6cw9l_jIcaV1kLUPw8gEYEzQS4-MGPwf77xRXULUAuYUXgqgBFB7OIu_GhjI-aFHw7k03hLKjyNz7AaEICcfiTqODg46fVO4KFJz09-n-t4qvNUuLbVbfyWQ">
+         </div>
+
+         <div class="details">
+            <h1>{{profile.Name}}</h1>
+            {{profile.Profession}} <br>
+            From : {{profile.Address}} <br>
+            Rated : <h1 class="rating">{{profile.RatingAVG}}</h1> by {{profile.RatingCunt}}
+         </div>
+
+         <div class="chips">
+            <div class="spacer"></div>
+            <div class="chip" *ngFor="let tag of profile.Proficiency">{{tag}}</div>
+         </div>
+      </div>
+
+      <div class="loader">
+         <h3>---- LOAD MORE ----</h3>
+      </div>
+   
+   </div>
+</div>

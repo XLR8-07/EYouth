@@ -1,0 +1,285 @@
+$background: #f5f6fa;
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #6d6d6d;
+$theme-light: #95d3ff;
+$Theme-major: #85caff;
+$button-text-color: #fff;
+$themed-text-color: #325f92;
+$TestVar: var(--primary-color);
+
+//** Navbar & Title --------------------------
+.navbar{
+   background: $Theme-major;
+   margin-bottom: 2em;
+   box-shadow: 0 6px 8px 0 #c5e7ff ;
+   
+   a{
+      color: white;
+   }
+}
+
+//** Search Bar -------------------------------
+.uppercase {
+	text-transform: uppercase;
+}
+
+//** button
+.btn {
+	display: inline-block;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	transition: all 200ms ease-in;
+   cursor: pointer;
+   transform: translateY(-2px);
+	
+	&--primary {
+		background: $Theme-major;
+		color: $button-text-color;
+		box-shadow: none;
+		border-radius: 2em;
+      padding: 8px 30px;
+      transition: .2s;
+		
+		&:hover {
+         background: darken($Theme-major, 4%);
+         box-shadow: 0 0 10px 2px $theme-light;
+		}
+		
+		&:active {
+			background: $theme-light;
+			box-shadow: inset 0 0 10px 2px $theme-light;
+		}
+	}
+	
+	&--inside {
+		margin-left: -96px;
+	}
+}
+
+//** form
+.form {	
+   display: block;
+   padding-right: -1em;
+   margin-left: auto;
+   margin-right: auto;
+   width: 75%;
+	&__field {
+		width: 95%;
+		background: #fff;
+		color: $input-text-color;
+		font: inherit;
+		box-shadow: -2px 2px 8px 0 rgba(0, 0, 0, 0.1);
+		border: 0;
+		outline: 0;
+		padding: 12px 18px;
+   }
+   
+   margin-bottom: 2em;
+}
+
+
+//** New question ---------------------------------
+.add-q{
+   background: $Theme-major;
+   box-shadow: none;
+   border-radius: 2em;
+   color: white;
+   display: inline-block;
+   cursor: pointer;
+   transition: .2s;
+
+   &:hover {
+      background: darken($Theme-major, 4%);
+      box-shadow: 0 6px 10px 0 $theme-light;
+   }
+
+
+   .material-icons{
+      display: inline-block;
+      color: $Theme-major;
+      background-color: white;
+      border-radius: 1em;
+      font-size: 2em;
+      padding: 5px;
+      margin: 2px;
+   }
+
+   h3{
+      display: inline-block;
+      margin: 0;
+      padding-left: .5em;
+      padding-right: 1em;
+      transform: translateY(-.5em);
+      margin-bottom: -1em;
+   }
+
+   margin-bottom: 2em;
+}
+
+
+//** Cards -------------------------------
+.item-list{
+   display: flex;
+}
+
+.question-list{
+   flex: 1.5;
+   border-right: 1px solid rgb(219, 219, 219);
+   height: 60vh;
+   padding: 0;
+
+   overflow-y: scroll;
+   scrollbar-width: none;
+
+
+   .ques-card{
+      position: relative;
+      margin: 0px 10px 10px 0px;
+      padding: 20px 20px 10px 20px;
+      background-color: $theme-light;
+      border-radius: 7px;
+      cursor: pointer;
+      
+      &:hover {
+         background: darken($theme-light, 4%);
+      }
+
+      .Linker{
+         position: absolute;
+         top: 0;
+         right: 14px;
+         transform: translateY(-100, -100);
+         display: inline;
+         background: white;
+         border-radius: 0 0 7px 7px;
+         padding: .2em .5em;
+         color: $themed-text-color;
+         transition: .3s;
+
+         &:hover{
+            padding: .5em;
+         }
+      }
+
+
+      h3{
+         color: $themed-text-color;
+         text-emphasis: bold;
+      }
+
+      .chips{
+         display: flex;
+         .spacer{flex: 1;}
+         .chip{
+            background: #c5e7ff ;
+            color: $themed-text-color;
+            border: solid 1px white;
+            border-radius: 1em;
+            display: inline-block;
+            padding: 0 1em 0 1em;
+            margin-left: .5em;
+         }
+      }
+   }
+}
+
+.question-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.mentor-list{
+   flex: 1;
+   height: 60vh;
+
+
+   overflow-y: scroll;
+   scrollbar-width: none;
+
+
+   .Prof-card{
+      margin: 0px 0px 10px 10px;
+      padding: 10px 20px 10px 20px;
+      background-color: $Theme-major;
+      border-radius: 7px;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+
+      &:hover {
+         background: darken($Theme-major, 4%);
+      }
+
+      .image{
+         margin-right: 15px;
+         margin-top: 10px;
+         justify-self: start;
+         
+         img{
+            display: inline-block;
+            width: 100px;
+            border-radius: 10px;
+         }
+      }
+
+      .details{
+         display: inline-block;
+         margin-top: 5px;
+
+         h1{
+            color: white;
+            margin: 0;
+         }
+
+         .rating{
+            font-size: 20px;
+            display: inline;
+         }
+      }
+
+      .chips{
+         flex-basis: 100%;
+         margin-top: 20px;
+         display: flex;
+         .spacer{flex: 1;}
+         .chip{
+            background: white ;
+            color: $themed-text-color;
+            border: solid 1px white;
+            border-radius: 1em;
+            display: inline-block;
+            padding: 0 1em 0 1em;
+            margin-left: .5em;
+         }
+      }
+   }
+}
+
+.mentor-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.loader{
+   background: $Theme-major;
+   text-align: center;
+   color: white;
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 2em;
+   cursor: pointer;
+   transition: .2s;
+   box-shadow: none;
+
+   &:hover{
+      background:  darken($Theme-major, 4%);
+      box-shadow: 0 6px 10px 0 $theme-light;
+   }
+}

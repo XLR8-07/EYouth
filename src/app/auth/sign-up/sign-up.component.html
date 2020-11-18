@@ -1,0 +1,85 @@
+<mat-card class="example-card">
+    <mat-toolbar color="primary">
+        <mat-icon>person_add</mat-icon>
+        <span> SIGN UP</span>
+    </mat-toolbar>
+    <form [formGroup]="this.signUpForm" autocomplete="off" (submit)="onSubmit()">
+        <div class="form">
+            <div class="input-fields">
+                <mat-form-field appearance="outline">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput formControlName="Name">
+                    <mat-icon matSuffix>face</mat-icon>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="Email" placeholder="someone@example.com">
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone No</mat-label>
+                    <input matInput formControlName="PhoneNo" placeholder="+880 ...">
+                    <mat-icon matSuffix>dialpad</mat-icon>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Job</mat-label>
+                    <input matInput formControlName="Job">
+                    <mat-icon matSuffix>work</mat-icon>
+                </mat-form-field><br>
+                
+
+                <mat-form-field appearance="outline" class="Tag-list">
+                    <mat-chip-list #chipList aria-label="Hobby">
+                        <mat-chip *ngFor="let t of Taglist" [selectable]="selectable" [removable]="removable"
+                            (removed)="remove(t)">
+                            {{t}}
+                            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                        </mat-chip>
+                        <input placeholder="Proficiencies" [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                            (matChipInputTokenEnd)="addTag($event)"><mat-icon matSuffix>accessibility_new</mat-icon>
+                    </mat-chip-list>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="Address">
+                    <mat-icon matSuffix>house</mat-icon>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>About You</mat-label>
+                    <textarea matInput formControlName="Description"></textarea>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput formControlName="Password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+            </div>
+
+
+            <div class="add_file">
+                <div class="img">
+                    <img [src]="imgSrc" width="150px" (click)="imageInput.click()">
+                    <mat-label>Profile Image</mat-label>
+                </div>
+                <input hidden #imageInput formControlName="imageURL" type="file" accept="image/*"
+                    (change)="showPreview($event)" placeholder="someone.jpg">
+
+                    <button class="select-btn" type="submit" mat-raised-button color="primary"> S I G N U P </button>
+            </div>
+
+        </div>
+    </form>
+
+
+</mat-card>

@@ -1,0 +1,60 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="container">
+    <div class="status-bar">
+        <h2>S T A T S</h2>
+        <div class="info">
+            <p>Total number of job posted: </p>
+            <p>Total number of questions posted: </p>
+            <p>Total number of answers given: </p>
+        </div>
+        <div class="graph">
+            <p>Graph of recent activities</p>
+        </div>
+    </div>
+
+    <div class="prof-view">
+
+        <!-- <img src="https://firebasestorage.googleapis.com/v0/b/eyouth-17eb6.appspot.com/o/Assets%2FDefault.jpg?alt=media&token=079ed7b8-9984-4eed-bc55-f909ab183fd4" alt="This is user's image"> -->
+        <img [src] = "this.authService.currentUserImageURL">
+        <div class="text">
+            <h3>Name: {{this.authService.currentUserName}}</h3>
+            <h4>Email: {{this.authService.currentUserEmail}}</h4>
+            <P>Rating: 4.5</P>
+        </div>
+    </div>
+
+    <div class="menu">
+        <h2>Menu</h2>
+    </div>
+
+    <div class="job-Updates">
+        <div class="current-jobs">
+            <h2>Onging Job</h2>
+            <h4>job title:</h4>
+            <div class="listings">
+                <p>Assigned Mentor: </p>
+                <p>Completion: </p>
+                <p>Deadline: </p>
+                <p>Payment: </p>
+                <p>Payment Status: </p>
+                <p>Job Status: </p>
+                <p>Message: </p>
+            </div>
+            <button mat-button color="primary">Send Message</button>
+        </div>
+        <div class="act-of-asked">Responses to asked questions</div>
+        <div class="act-of-followed">Followed questions</div>
+
+    </div>
+
+    <div class="feed">
+        <div class="field-of-interests">
+            <h2>Domains</h2>
+            <p *ngFor="let D of this.listOfDom">{{D}}</p>
+        </div>
+        <div class="post-job"></div>
+        <button mat-button color="primary">Post Job</button>
+        <button mat-button color="primary">Ask Question</button>
+        <div class="post-question"></div>
+    </div>
+</div>

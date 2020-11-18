@@ -1,0 +1,48 @@
+<nav class="navbar">
+   <a class="navbar-brand">NEW QUESTION</a>
+   <span mat-dialog-close class="material-icons Closer">
+      close
+   </span>
+</nav>
+
+<div class="container">
+   <div class="spacer"></div>
+   <form [formGroup]="this.questionFormData" class="form" (submit) = "onSubmit()">
+      <mat-form-field class="Regular-in-field">
+         <mat-label>QUESTION</mat-label>
+         <input formControlName="Q" matInput placeholder="What do you want to know?">
+         <mat-error *ngIf="this.questionFormData.controls['Q'].hasError('required')">Please enter your question</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="Regular-large-field">
+         <mat-label>DESCRIPTION</mat-label>
+         <textarea formControlName="Details" matInput placeholder="Details about your question" rows="7"></textarea>
+      </mat-form-field>
+
+
+      <mat-form-field class="Tag-list">
+         <mat-chip-list #chipList aria-label="Add Tags">
+            <mat-chip *ngFor="let t of Taglist" [selectable]="selectable" [removable]="removable"
+               (removed)="remove(t)">
+               {{t}}
+               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Add Tags" [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="addTag($event)">
+         </mat-chip-list>
+      </mat-form-field>
+
+   
+      <mat-form-field class="Regular-in-field">
+         <mat-label>RELATED LINKS</mat-label>
+         <input formControlName="Link" matInput placeholder="i.e. Google.com">
+      </mat-form-field>
+
+
+      <button mat-flat-button color="primary" type="submit" >SUBMIT</button>
+
+   
+   </form>
+   <div class="spacer"></div>
+</div>

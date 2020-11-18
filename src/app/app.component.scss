@@ -1,0 +1,129 @@
+$background: #f5f6fa;
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #6d6d6d;
+$theme-light: #cae9ff;
+$Theme-mid: #90d1ff;
+$Theme-major: #85caff;
+$button-text-color: #fff;
+$themed-text-color: #325f92;
+
+
+
+.page-titile{
+   color: rgb(154, 65, 255);
+   padding: .4em;
+   display: flex;
+
+   .spacer{
+      flex: auto;
+   }
+}
+
+.Profile{
+   display: inline-block;
+   border-radius: 50%;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   background: $Theme-major;
+   box-shadow: 2px 4px 8px $theme-light;
+   cursor: pointer;
+   text-align: center;
+   transition: .4s;
+
+   img{
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top:50%;
+      width: 70%;
+      z-index: -1;
+      opacity: 0%;
+      transition: .4s;
+   }
+
+   h1{
+      line-height: 90%;
+      font-family: 'Lato', sans-serif;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      font-size: 50px;
+      color: white;
+      transition: .4s;
+   }
+
+   &:hover{
+      box-shadow: 2px 4px 10px $Theme-mid;
+      z-index: 20;
+      background: white;
+      
+      
+      img{
+         opacity: 100%;
+      }
+
+
+      h1{
+         opacity: 0%;
+      }
+   }
+   
+}
+
+.loc-1{
+   left: 11%;
+   top: 58%; 
+
+}
+
+.loc-2{
+   left: 18.5%;
+   top: 50%;
+}
+
+.loc-3{
+   left: 29%;
+   top: 37.7%;
+}
+
+.loc-4{
+   left: 35%;
+   top: 56.4%;
+}
+
+.loc-5{
+   left: 46.8%;
+   top: 42.5%;
+}
+
+.loc-6{
+   left: 51.5%;
+   top: 61.7%;
+}
+
+.loc-7{
+   left: 66.2%;
+   top: 39.4%;
+}
+
+.loc-8{
+   left: 74.6%;
+   top: 58.5%;
+}
+
+.loc-9{
+   left: 79%;
+   top: 34%;
+}
+
+.loc-10{
+   left: 87%;
+   top: 54.3%;
+}
+
+.loc-11{
+   left: 69.7%;
+   top: 76.1%;
+}

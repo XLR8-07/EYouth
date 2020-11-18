@@ -1,0 +1,56 @@
+$theme-light: #95d3ff;
+$Theme-major: #85caff;
+$theme-extra-light: #d1ecff;
+$themed-text-color: #325f92;
+
+.navbar{
+   background: $Theme-major;
+   margin-bottom: 2em;
+   box-shadow: 0 6px 8px 0 $theme-extra-light ;
+   
+   a{
+      color: white;
+   }
+
+   .Closer{
+      font-size: 30px;
+      color: white;
+
+      &:hover{
+         color: $themed-text-color;
+         cursor: pointer;
+      }
+
+   }
+}
+
+.container{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+
+   .spacer{
+      flex: 1;
+   }
+   
+   .form{
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+
+      .Regular-in-field {
+         width: 100%;
+         margin-bottom: 1em;
+      }
+
+      .Regular-short-field {
+         width: 50%;
+         margin-bottom: 1em;
+      }
+
+      button{
+         width: 200px;
+      }
+      
+   }
+}

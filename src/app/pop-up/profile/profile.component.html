@@ -1,0 +1,46 @@
+<div class="container">
+   <div class="profile">
+      <div class="intro-row">
+      
+         <img src={{this.service.ClickedProfile.Profile_Image}}
+            alt="https://lh3.googleusercontent.com/proxy/wJp9Sew77MCPyeqlYrXJ09D92O6cw9l_jIcaV1kLUPw8gEYEzQS4-MGPwf77xRXULUAuYUXgqgBFB7OIu_GhjI-aFHw7k03hLKjyNz7AaEICcfiTqODg46fVO4KFJz09-n-t4qvNUuLbVbfyWQ">
+      
+         <div class="name-id">
+      
+            <h1>{{this.service.ClickedProfile.Name}}</h1>
+      
+            <h3>{{this.service.ClickedProfile.Profession}}</h3>
+      
+            <h4>From : {{this.service.ClickedProfile.Address}}</h4>
+      
+         </div>
+      </div>
+      
+      <div class="prfsion">
+         <div class="tags" *ngFor="let pro of this.service.ClickedProfile.Proficiency">{{pro}}</div>
+      </div>
+      
+      <div class="descrip">
+         <p *ngFor="let p of this.service.ClickedProfile.Paragraphs">{{p}}</p>
+      </div>
+      
+      <div class="cont">
+         <h3>Contact Info</h3>
+         <h4>Email : {{this.service.ClickedProfile.Email}}</h4>
+         <h4>Phone : {{this.service.ClickedProfile.Phone}}</h4>
+      </div>
+
+      <div class="rating">
+         <h1>{{this.service.ClickedProfile.RatingAVG}}/5</h1>
+          by {{this.service.ClickedProfile.RatingCunt}} votes
+      </div>
+
+      <div class="cv">
+         <button mat-flat-button (click)="onClickCV()" color="primary" type="button"> C V </button>
+      </div>
+
+   </div>
+   <div class="feed">
+
+   </div>
+</div>

@@ -1,0 +1,73 @@
+<nav class="navbar">
+   <a class="navbar-brand">REGISTER</a>
+   <span mat-dialog-close class="material-icons Closer">
+      close
+   </span>
+</nav>
+
+<div class="container">
+   <div class="spacer"></div>
+   <form [formGroup]="this.profileFormData" class="form" (submit)="onSubmit()" >
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Name</mat-label>
+         <input formControlName="Name" matInput placeholder="What is your name?">
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Password</mat-label>
+         <input formControlName="Password" type="password" matInput placeholder="Atleast 8 charecter long">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Email</mat-label>
+         <input formControlName="Email" matInput type="email" placeholder="Provide your Email">
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Work</mat-label>
+         <input formControlName="Profession" matInput placeholder="Profession">
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Phone no</mat-label>
+         <input formControlName="Phone" matInput placeholder="Your Phone no">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-in-field">
+         <mat-label>Pic</mat-label>
+         <input formControlName="Profile_Image" matInput placeholder="Put your image URL here">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-in-field">
+         <mat-label>Address</mat-label>
+         <input formControlName="Address" matInput placeholder="Where do you live?">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-in-field">
+         <mat-label>DESCRIPTION</mat-label>
+         <textarea (keydown.enter)="search($event.target.value)" matInput placeholder="Say something about youeself" rows="7"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="Tag-list">
+         <mat-chip-list #chipList aria-label="Hobby">
+            <mat-chip *ngFor="let t of Taglist" [selectable]="selectable" [removable]="removable" (removed)="remove(t)">
+               {{t}}
+               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Proficiencies" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addTag($event)">
+         </mat-chip-list>
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-in-field">
+         <mat-label>CV</mat-label>
+         <input matInput formControlName="CV" placeholder="Put your CV file link here">
+      </mat-form-field>
+
+      <input type="file">
+
+      <button mat-flat-button color="primary" type="submit">CREATE</button>
+
+   </form>
+   <div class="spacer"></div>
+</div>

@@ -1,0 +1,126 @@
+.container{
+    display: grid;
+    grid-template-areas: 
+        "stat stat stat stat stat prof"
+        "menu activity activity activity activity feed"
+    ;
+    grid-auto-rows: minmax(100px, auto);
+    max-width: 100%;
+    padding: 0;
+
+
+    .status-bar{
+        grid-area: stat;
+        background: #eee;
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'text-info graph-info'
+        ;
+
+        h2{
+            grid-area: title;
+            background-color: cornflowerblue;
+            align-self: start;
+            margin: 0;
+            padding: 0 0 0 1em;
+            height: auto;
+            text-align: center;
+        }
+        
+        .info{
+            grid-area: text-info;
+            padding: 1em;
+        }
+
+        .graph{
+            grid-area: graph-info;
+            border-left: #DDD 2px solid;
+            padding: 1em;
+        }
+
+
+    }
+    
+    .prof-view{
+        grid-area: prof;
+        border: #eee solid 1px;
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+        grid-row: auto;
+        
+
+        img{
+            width: 150px;
+        }
+
+        .text{
+            padding-left: 1em;
+        }
+    }
+    
+    .menu{
+        grid-area: menu;
+        border: #eee solid 1px;
+        justify-content: center;
+        align-content: center;
+        padding: 2em 1em 1em 1em;
+    }
+    
+    .job-Updates{
+        grid-area: activity;
+        display: flex;
+        flex-direction: column;
+        border: #eee solid 1px;
+
+        .current-jobs{
+            border-bottom: solid #eee 1px;
+            min-height: 10vh;
+            padding: 2em;
+
+            .listings{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .mat-button{
+                background-color: cornflowerblue;
+                color: white;
+                float: right;
+            }
+        }
+
+        .act-of-asked{
+            border-bottom: solid #eee 1px;
+            min-height: 10vh;
+            padding: 2em;
+
+        }
+
+        .act-of-followed{
+            border-bottom: solid #eee 1px;
+            min-height: 10vh;
+            padding: 2em;
+
+        }
+    }
+    
+    .feed{
+        grid-area: feed;
+        border: #eee solid 1px;
+        display: flex;
+        flex-direction: column;
+        padding: 2em 1em 1em 2em;
+
+        .mat-button{
+            background-color: cornflowerblue;
+            color: white;
+            margin: 1em 2em;
+        }
+    }
+}
+
+
+
+

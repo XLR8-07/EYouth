@@ -1,0 +1,42 @@
+.form{
+    display: flex;
+    margin-top: 1em;
+    flex-direction: row;
+    min-width: 600px;
+}
+
+
+
+.input-fields{
+    flex: 3;
+    display: inline-block;
+    min-width: 50%;
+
+    mat-form-field{
+        width: 100%;
+    }
+}
+
+.add_file{
+    flex: 1;
+    display: inline-block;
+    margin-left: 1em;
+    -ms-flex-align: end;
+
+    button{
+        position: absolute;
+        transform: translate(-19%, -50%);
+        bottom: 0;
+        right: 0;
+    }
+
+    .img{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 40px 0 40px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+}
